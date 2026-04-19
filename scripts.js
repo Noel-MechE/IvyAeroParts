@@ -23,7 +23,7 @@ let IvyAeroParts = [
     price: 175.00,
     partNumber: 1062,
     spec: "R-12 refrigerant, Suniso-5GS oil compatible",
-    imageURL: "https://via.placeholder.com/300x200?text=AC+Compressor"
+    imageURL: "https://cdn11.bigcommerce.com/s-lh7wonygtd/images/stencil/1280x1280/products/138052/1544409/N92884-678__83772.1752688229.jpg?c=1"
   },
   {
     name: "Cessna R182 Window Assembly",
@@ -31,7 +31,7 @@ let IvyAeroParts = [
     price: 125.00,
     partNumber: 1110,
     spec: "Clear cabin door window, LH side, durable acrylic",
-    imageURL: "https://via.placeholder.com/300x200?text=Window"
+    imageURL: "https://i.ebayimg.com/images/g/WOgAAeSwVZJplh7c/s-l1600.webp"
   },
   {
     name: "RealSimGear G1000 PFD/MFD Module",
@@ -39,15 +39,15 @@ let IvyAeroParts = [
     price: 699.00,
     partNumber: 1910,
     spec: "Primary flight display, X-Plane & MSFS compatible",
-    imageURL: "https://via.placeholder.com/300x200?text=PFD+Module"
+    imageURL: "https://realsimgear.com/cdn/shop/files/G1000PFDHero.jpg?v=1732132490&width=1000"
   },
   {
     name: "Parker Hannifin Hydraulic Pump",
     category: "Fluids",
-    price: 850.00,
+    price: 573.00,
     partNumber: 1203,
     spec: "Controls landing gear, flaps, brakes, high-pressure rated",
-    imageURL: "https://via.placeholder.com/300x200?text=Hydraulic+Pump"
+    imageURL: "https://cdn.radwell.com/productgoogleimages/4682e27aae5b495883f4091ca9dfbd11.jpg"
   },
   {
     name: "Garmin TCAS Receiver Transmitter",
@@ -55,31 +55,31 @@ let IvyAeroParts = [
     price: 2400.00,
     partNumber: 1304,
     spec: "Traffic collision avoidance system, real-time detection",
-    imageURL: "https://via.placeholder.com/300x200?text=TCAS"
+    imageURL: "https://i0.wp.com/www.aeroproavionics.com/wp-content/uploads/2014/02/gts8000.jpg"
   },
   {
-    name: "Goodyear Aviation Tire",
+    name: "Goodyear Flight Custom III Tube Type Tire 6.50-10 10 Ply 650C06-3",
     category: "Hardware",
-    price: 520.00,
+    price: 568.00,
     partNumber: 1405,
-    spec: "Radial tire, bias compatible, heat-resistant sidewalls",
-    imageURL: "https://via.placeholder.com/300x200?text=Aviation+Tire"
+    spec: "Deeper tread depth, Extra-wide Aquachannel Grooves, Belt package with Kevlar, Dual polymer tread compound",
+    imageURL: "https://cdn.aircraftspruce.com/cache/400-400-/catalog/graphics/flightcustom3.jpg"
   },
   {
-    name: "Rockwell Collins VHF Radio",
+    name: "Garmin VHF 215 AIS Marine Radio",
     category: "Avionics",
-    price: 1200.00,
+    price: 749.99,
     partNumber: 1506,
-    spec: "Communication system, 118-136 MHz range, crystal clear",
-    imageURL: "https://via.placeholder.com/300x200?text=VHF+Radio"
+    spec: "Communication system, All U.S., Canadian, and international marine channels plus 10 NOAA weather channels, crystal clear",
+    imageURL: "https://images.crutchfieldonline.com/ImageHandler/trim/750/457/products/2018/30/150/g150VHF215A-M.jpg"
   },
   {
-    name: "PPG Aerospace Windshield Assembly",
+    name: "PPG Aerospace Windshield Cabin Window for Alenia ATR-42/72 w/ CERTS",
     category: "Hardware",
-    price: 950.00,
+    price: 1377.99,
     partNumber: 1607,
-    spec: "Laminated glass, heating frame, anti-glare coating",
-    imageURL: "https://via.placeholder.com/300x200?text=Windshield"
+    spec: " A brand-new, unused, unopened, undamaged item in its original packaging",
+    imageURL: "https://th.bing.com/th?id=OPHS.hlG2Po5f%2bSr6HQ474C474&w=144&h=130&c=17&o=6&pid=21.1&dpr=2 "
   }
 ];
 
