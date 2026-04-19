@@ -5,7 +5,7 @@ const Hawker_Battery_URL =
 const EAST_LOS_HIGH_POSTER_URL =
   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
-// This was an array of strings (TV show titles), but I will be replaced with information 
+// This was an array of strings (TV show titles), but I will be replaced with array of parts each containing unique atributes
 let IvyAeroParts = [
   {
     name: "Honeywell Main Wheel",
@@ -97,40 +97,44 @@ function showCards() {
   cardContainer.innerHTML = "";
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
+  for (let i = 0; i < IvyAeroParts.length; i++) {  // Loop through IvyAeroParts
+  
+    let part = IvyAeroParts[i];  // Get ONE part object
 
     // This part of the code doesn't scale very well! After you add your
     // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
+    let imageURL = part.imageURL; //replaced with previouse non scalable code block
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
+   editCardContent(nextCard, part); // Edit title and image
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
 }
 
-function editCardContent(card, newTitle, newImageURL) {
+function editCardContent(card, part) {  // Takes the part object
   card.style.display = "block";
-
+  
+  // Fill in the name
   const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
-
+  cardHeader.textContent = part.name;
+  
+  // Fill in the image
   const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
+  cardImage.src = part.imageURL;
+  cardImage.alt = part.name;
+  
+  // Fill in category
+  card.querySelector(".category").textContent = part.category;
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+  // Fill in price
+  card.querySelector(".price").textContent = part.price;
+
+  // Fill in partNumber
+  card.querySelector(".partNumber").textContent = part.partNumber;
+
+  // Fill in spec
+  card.querySelector(".spec").textContent = part.spec;
+  
 }
 
 // This calls the addCards() function when the page is first loaded
@@ -144,6 +148,6 @@ function quoteAlert() {
 }
 
 function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
+  IvyAeroParts.pop();  // 
+  showCards();
 }
