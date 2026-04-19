@@ -4,21 +4,43 @@ body {
   padding: 0;
 }
 
+/* HEADER */
 .main-header {
   background-color: rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
+  padding: 20px;
+  text-align: center;
 }
 
 .title {
   text-align: center;
-  margin: 0;
-  font-size: 8em;
+  margin: 0 0 15px 0;
+  font-size: 4em;
   font-family: "Helvetica";
   font-weight: normal;
   color: white;
 }
 
-/* Changed from flexbox to CSS Grid so cards wrap nicely in rows */
+/* SEARCH INPUT */
+#searchInput {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+/* CATEGORY DROPDOWN */
+#categoryFilter {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* CARD GRID */
+/* switched from the starter flexbox to CSS Grid so cards wrap into rows automatically */
 #card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -50,6 +72,7 @@ body {
   height: auto;
 }
 
+/* FOOTER */
 .footer {
   display: flex;
   justify-content: center;

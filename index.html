@@ -1,44 +1,56 @@
 <!doctype html>
+<!-- lines 1-2 establish the type of document it is and open the root element -->
 <html>
   <head>
     <title>IvyAeroParts | Home</title>
-    <meta name="description" content="Aviation Parts Inventory System" />
     <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
   </head>
-
   <body>
+
+    <!-- lines 3-15 represent the main header -->
+    <!-- the first header being <h1> is the title of the website -->
+    <!-- below that we have an input box for our search box -->
+    <!-- and a dropdown for filtering by category -->
     <header class="main-header">
       <h1 class="title">IvyAeroParts Inventory System</h1>
+
+      <input type="text" id="searchInput" placeholder="Search by Part Name or Number" />
+
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="Hardware">Hardware</option>
+        <option value="Avionics">Avionics</option>
+        <option value="Fluids">Fluids</option>
+      </select>
     </header>
-    
-    <!-- This container is where showCards() will put all the cloned cards -->
+
+    <!-- this is where JavaScript injects the cards — starts empty, showCards() fills it -->
     <div id="card-container"></div>
-    
-    <!-- Template card that we'll clone for each part in IvyAeroParts array
-         Had duplicate div tags here initially - removed the extra one so 
-         JavaScript can find and clone this template correctly -->
+
+    <!-- lines 17-29 establish the format that each part will take on -->
+    <!-- this is the hidden template card that gets cloned for every part in the array -->
+    <!-- cloneNode(true) in scripts.js copies this whole structure including everything inside -->
     <div class="card" style="display: none">
       <div class="card-content">
-        <!-- Part name goes in the h2 -->
         <h2>Part Name</h2>
-        
-        <!-- Image from the part's imageURL -->
         <img src="" alt="Part Image" />
-        
-        <!-- These spans hold category, price, partNumber, and spec
-             JavaScript querySelector() will find these by class name and fill them in -->
         <p><strong>Category:</strong> <span class="category"></span></p>
         <p><strong>Price:</strong> $<span class="price"></span></p>
         <p><strong>Part Number:</strong> <span class="partNumber"></span></p>
         <p><strong>Spec:</strong> <span class="spec"></span></p>
       </div>
     </div>
-    
+
+    <!-- lines 31-34 establish another section for the buttons at the bottom -->
     <div class="footer">
-      <!-- These buttons are placeholders for now - will update functionality later -->
       <button onclick="quoteAlert()">Get A Quote!</button>
       <button onclick="removeLastCard()">Remove A Card!</button>
     </div>
+
+    <!-- lines 36-38 complete the document -->
+    <!-- the script tag goes at the bottom — early on i had it in the head and nothing worked -->
+    <!-- the HTML didnt exist yet when the script ran so it couldnt find any elements -->
+    <!-- moving it here means the whole page loads before any JavaScript runs -->
+    <script src="scripts.js"></script>
   </body>
 </html>
