@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
   <head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>IvyAeroParts | Home</title>
+    <meta name="description" content="Aviation Parts Inventory System" />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
   </head>
@@ -11,19 +11,32 @@
     <header class="main-header">
       <h1 class="title">IvyAeroParts Inventory System</h1>
     </header>
+    
+    <!-- This container is where showCards() will put all the cloned cards -->
     <div id="card-container"></div>
+    
+    <!-- Template card that we'll clone for each part in IvyAeroParts array
+         Had duplicate div tags here initially - removed the extra one so 
+         JavaScript can find and clone this template correctly -->
     <div class="card" style="display: none">
-      <div class="card" style="display: none">
-  <div class="card-content">
-    <h2>Part Name</h2>
-    <img src="" alt="Part Image" />
-    <p><strong>Category:</strong> <span class="category"></span></p>
-    <p><strong>Price:</strong> <span class="price"></span></p>
-    <p><strong>Part Number:</strong> <span class="partNumber"></span></p>
-    <p><strong>Spec:</strong> <span class="spec"></span></p>
-  </div>
-</div>
+      <div class="card-content">
+        <!-- Part name goes in the h2 -->
+        <h2>Part Name</h2>
+        
+        <!-- Image from the part's imageURL -->
+        <img src="" alt="Part Image" />
+        
+        <!-- These spans hold category, price, partNumber, and spec
+             JavaScript querySelector() will find these by class name and fill them in -->
+        <p><strong>Category:</strong> <span class="category"></span></p>
+        <p><strong>Price:</strong> $<span class="price"></span></p>
+        <p><strong>Part Number:</strong> <span class="partNumber"></span></p>
+        <p><strong>Spec:</strong> <span class="spec"></span></p>
+      </div>
+    </div>
+    
     <div class="footer">
+      <!-- These buttons are placeholders for now - will update functionality later -->
       <button onclick="quoteAlert()">Get A Quote!</button>
       <button onclick="removeLastCard()">Remove A Card!</button>
     </div>

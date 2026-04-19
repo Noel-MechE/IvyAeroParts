@@ -18,18 +18,20 @@ body {
   color: white;
 }
 
+/* Changed from flexbox to CSS Grid so cards wrap nicely in rows */
 #card-container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   margin: 20px;
+  padding: 20px;
 }
 
 .card {
-  width: 300px;
+  width: 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 5px;
 }
 
 .card-content {

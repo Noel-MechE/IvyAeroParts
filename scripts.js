@@ -1,11 +1,5 @@
-const HoneyWell_Wheel_URL =
-  "https://honeywell.scene7.com/is/image/Honeywell65/hon-aero-32520ajm-main-and-nose-wheels";
-const Hawker_Battery_URL =
-  "https://www.batterymart.com/merchant2/graphics/00000001/12/SBS-J16_hawker_main_400x400.jpg;
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
-
-// This was an array of strings (TV show titles), but I will be replaced with array of parts each containing unique atributes
+// My IvyAeroParts data — each object has name, category, price, partNumber, spec, and imageURL
+// This replaces the old TV show titles array completely
 let IvyAeroParts = [
   {
     name: "Honeywell Main Wheel",
@@ -88,66 +82,72 @@ let IvyAeroParts = [
     imageURL: "https://via.placeholder.com/300x200?text=Windshield"
   }
 ];
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
 
-// This function adds cards the page to display the data in the array
+// showCards() loops through the IvyAeroParts array and creates a card for each part
+// It clones the template card from the HTML and fills it with real data
 function showCards() {
   const cardContainer = document.getElementById("card-container");
-  cardContainer.innerHTML = "";
+  cardContainer.innerHTML = "";  // Clear any old cards first
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < IvyAeroParts.length; i++) {  // Loop through IvyAeroParts
-  
-    let part = IvyAeroParts[i];  // Get ONE part object
+  // Loop through each part in the array — this is the conveyor belt
+  // i starts at 0, goes up by 1 each loop, stops when i reaches the total number of parts
+  for (let i = 0; i < IvyAeroParts.length; i++) {
+    let part = IvyAeroParts[i];  // Grab THIS part from the array
 
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = part.imageURL; //replaced with previouse non scalable code block
-
-    const nextCard = templateCard.cloneNode(true); // Copy the template card
-   editCardContent(nextCard, part); // Edit title and image
-    cardContainer.appendChild(nextCard); // Add new card to the container
+    // Make a copy of the empty template card so we can fill it with real data
+    const nextCard = templateCard.cloneNode(true);
+    
+    // Fill the card with this part's info (name, category, price, etc)
+    editCardContent(nextCard, part);
+    
+    // Add the filled card to the page so people can see it
+    cardContainer.appendChild(nextCard);
   }
 }
 
-function editCardContent(card, part) {  // Takes the part object
+// editCardContent() takes an empty card and fills it with ONE part's data
+// It uses querySelector to find the right spots in the card and puts the data there
+function editCardContent(card, part) {
+  // Show the card on the page (it starts hidden in the HTML)
   card.style.display = "block";
   
-  // Fill in the name
+  // Find the h2 tag and put the part name in there
   const cardHeader = card.querySelector("h2");
   cardHeader.textContent = part.name;
   
-  // Fill in the image
+  // Find the img tag and set its source to the part's image URL
   const cardImage = card.querySelector("img");
   cardImage.src = part.imageURL;
   cardImage.alt = part.name;
   
-  // Fill in category
+  // Find the span with class="category" and fill it with the category value
   card.querySelector(".category").textContent = part.category;
 
-  // Fill in price
+  // Find the span with class="price" and fill it with the price value
   card.querySelector(".price").textContent = part.price;
 
-  // Fill in partNumber
+  // Find the span with class="partNumber" and fill it with the part number
   card.querySelector(".partNumber").textContent = part.partNumber;
 
-  // Fill in spec
+  // Find the span with class="spec" and fill it with the specification
   card.querySelector(".spec").textContent = part.spec;
-  
 }
 
-// This calls the addCards() function when the page is first loaded
+// When the page first loads, run showCards() so all 10 parts appear
 document.addEventListener("DOMContentLoaded", showCards);
 
+// This function was from the starter code — keeping it for the "Get A Quote" button
 function quoteAlert() {
   console.log("Button Clicked!");
   alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!",
+    "Contact our aviation parts team for custom quotes and bulk orders!"
   );
 }
 
+// removeLastCard() removes the last part from the array and refreshes the display
+// This is the "Remove A Card" button functionality
 function removeLastCard() {
-  IvyAeroParts.pop();  // 
-  showCards();
+  IvyAeroParts.pop();  // Remove the last item from the IvyAeroParts array
+  showCards();  // Refresh the page to show the updated list
 }
