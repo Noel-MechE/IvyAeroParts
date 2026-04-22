@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let i = 0; i < IvyAeroParts.length; i++) {
       let part = IvyAeroParts[i];
       if (part.name.toLowerCase().includes(searchText) || part.partNumber.toString().includes(searchText)) {
-        results.push(part); // this part matched so add it to results
+        results.push(part); // I needed search to work whether someone types Garmin or garmin, so I converted both sides to lowercase before comparing
       }
     }
     showCards(results); // show only the parts that matched
