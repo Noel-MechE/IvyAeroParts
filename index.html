@@ -1,56 +1,48 @@
 <!doctype html>
-<!-- lines 1-2 establish the type of document it is and open the root element -->
 <html>
   <head>
     <title>IvyAeroParts | Home</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-    <!-- lines 3-15 represent the main header -->
-    <!-- the first header being <h1> is the title of the website -->
-    <!-- below that we have an input box for our search box -->
-    <!-- and a dropdown for filtering by category -->
     <header class="main-header">
-      <h1 class="title">IvyAeroParts Inventory System</h1>
-
-      <input type="text" id="searchInput" placeholder="Search by Part Name or Number" />
-
-      <select id="categoryFilter">
-        <option value="all">All Categories</option>
-        <option value="Hardware">Hardware</option>
-        <option value="Avionics">Avionics</option>
-        <option value="Fluids">Fluids</option>
-      </select>
+      <img src="https://static.vecteezy.com/system/resources/previews/054/302/436/large_2x/adorable-black-silhouette-of-smilodon-head-vector.jpg" alt="IvyAeroParts Logo" class="logo" />
+      <div class="header-content">
+        <h1 class="title">IvyAeroParts</h1>
+      </div>
+      <div class="header-controls">
+        <input type="text" id="searchInput" placeholder="Search by Part Name or Number" />
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="Hardware">Hardware</option>
+          <option value="Avionics">Avionics</option>
+          <option value="Fluids">Fluids</option>
+        </select>
+      </div>
     </header>
 
-    <!-- this is where JavaScript injects the cards — starts empty, showCards() fills it -->
     <div id="card-container"></div>
 
-    <!-- lines 17-29 establish the format that each part will take on -->
-    <!-- this is the hidden template card that gets cloned for every part in the array -->
-    <!-- cloneNode(true) in scripts.js copies this whole structure including everything inside -->
     <div class="card" style="display: none">
-      <div class="card-content">
-        <h2>Part Name</h2>
-        <img src="" alt="Part Image" />
-        <p><strong>Category:</strong> <span class="category"></span></p>
-        <p><strong>Price:</strong> $<span class="price"></span></p>
-        <p><strong>Part Number:</strong> <span class="partNumber"></span></p>
-        <p><strong>Spec:</strong> <span class="spec"></span></p>
-      </div>
-    </div>
+  <img src="" alt="Part Image" />
+  <div class="card-content">
+    <h2>Part Name</h2>
+    <p><strong>Category:</strong> <span class="category"></span></p>
+    <p><strong>Price:</strong> $<span class="price"></span></p>
+    <p><strong>Part Number:</strong> <span class="partNumber"></span></p>
+    <p><strong>Spec:</strong> <span class="spec"></span></p>
+  </div>
+</div>
 
-    <!-- lines 31-34 establish another section for the buttons at the bottom -->
     <div class="footer">
-      <button onclick="quoteAlert()">Get A Quote!</button>
-      <button onclick="removeLastCard()">Remove A Card!</button>
+      <button onclick="quoteAlert()">Request Quote</button>
+      <button onclick="removeLastCard()">Remove Part</button>
+      <p> Contact Information:  <br>1113017@lbcc.edu <br> 323-675-4059 </p>
+      <p>Location: <br>308 Negra Arroyo Lane, Albuquerque, New Mexico 87104</p>
+      <p> Business Hours: <br>Monday - Friday <br> 9 am - 5 pm Daily </p>
+    
     </div>
 
-    <!-- lines 36-38 complete the document -->
-    <!-- the script tag goes at the bottom — early on i had it in the head and nothing worked -->
-    <!-- the HTML didnt exist yet when the script ran so it couldnt find any elements -->
-    <!-- moving it here means the whole page loads before any JavaScript runs -->
     <script src="scripts.js"></script>
   </body>
 </html>
